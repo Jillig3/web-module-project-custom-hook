@@ -1,12 +1,26 @@
 import React, { useState } from 'react';
 
-const Navbar = (props) => {
+const Navbar = (key, initialValues) => {
   const toggleMode = e => {
     e.preventDefault();
     props.setDarkMode(!props.darkMode);
   };
 
-  return (
+  const [values, setValues] = useState(() => {
+    if (localStorage.getItem(key)) {
+      return(JSON.parse(localStorage.getItem(key)));
+    } else {
+      localStorage.setItem(props, JSON.stringify(initialValues));
+      return(initialValues);
+    }
+  });
+  const setStoredValues = (values) => {
+    localStorage.setItem(key, JSON.stringify(values));
+    setValues(values);
+}
+
+  return [values, setStoredValues], (
+    
     <nav className="navbar">
       <h1>Crypto Tracker</h1>
       <div className="dark-mode__toggle">
