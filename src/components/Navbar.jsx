@@ -1,25 +1,25 @@
 import React, { useState } from 'react';
 
-const Navbar = (key, initialValues) => {
+const Navbar = (props) => {
   const toggleMode = e => {
     e.preventDefault();
     props.setDarkMode(!props.darkMode);
   };
 
-  const [values, setValues] = useState(() => {
-    if (localStorage.getItem(key)) {
-      return(JSON.parse(localStorage.getItem(key)));
-    } else {
-      localStorage.setItem(props, JSON.stringify(initialValues));
-      return(initialValues);
-    }
-  });
-  const setStoredValues = (values) => {
-    localStorage.setItem(key, JSON.stringify(values));
-    setValues(values);
-}
+//   const [values, setValues] = useState(() => {
+//     if (localStorage.getItem(key)) {
+//       return(JSON.parse(localStorage.getItem(key)));
+//     } else {
+//       localStorage.setItem(props, JSON.stringify(initialValues));
+//       return(initialValues);
+//     }
+//   });
+//   const setStoredValues = (values) => {
+//     localStorage.setItem(key, JSON.stringify(values));
+//     setValues(values);
+// }
 
-  return [values, setStoredValues], (
+  return  (
     
     <nav className="navbar">
       <h1>Crypto Tracker</h1>
