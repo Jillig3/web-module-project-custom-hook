@@ -6,7 +6,21 @@ const Navbar = (props) => {
     props.setDarkMode(!props.darkMode);
   };
 
-  return (
+//   const [values, setValues] = useState(() => {
+//     if (localStorage.getItem(key)) {
+//       return(JSON.parse(localStorage.getItem(key)));
+//     } else {
+//       localStorage.setItem(props, JSON.stringify(initialValues));
+//       return(initialValues);
+//     }
+//   });
+//   const setStoredValues = (values) => {
+//     localStorage.setItem(key, JSON.stringify(values));
+//     setValues(values);
+// }
+
+  return  (
+    
     <nav className="navbar">
       <h1>Crypto Tracker</h1>
       <div className="dark-mode__toggle">
